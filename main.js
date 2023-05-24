@@ -16,7 +16,7 @@ let getWeather =()=>{
 
     else {
         console.log(key);
-        let url =`https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${key} `;
+        let url =`https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${key}&units=metric `;
         cityref.value="";
         console.log(key);
         fetch(url)
@@ -28,7 +28,7 @@ let getWeather =()=>{
             <h4 class="weather">${data.weather[0].main}
             <h4 class="weather">${data.weather[0].description}</h4>
             <img src ="https://openweathermap.org/img/w/${data.weather[0].icon}.png">
-            <h1>${data.main.temp} F</h1>
+            <h1>${data.main.temp}&deg;C.</h1>
             <div class="temp-container">
                 <div>
                     <h4 class="title">max</h4>
